@@ -4,6 +4,8 @@
     %title
       = yield(:title) + " - " if content_for?(:title)
       OSMT
+    %meta{:content => "Simple and real scrum board, that will help you easialy work with agile team whereever you are.Start your scrum board for free. Scrum(agile) is most efficient way to develop products.", :name => "description"}/
+    %meta{:content => "scrum,scrum board,cork board,colaboration,daily scrum,agile", :name => "keywords"}
       = stylesheet_link_tag 'application', 'front', "redmond/jquery-ui-1.8.4.custom.css",'tickbox'
       = stylesheet_link_tag content_for(:stylesheets).split(/,/) if content_for?(:stylesheets)
       = javascript_include_tag 'jquery.min', 'jquery-ui.min', 'jquery_ujs', 'application','tickbox','alertMe'
