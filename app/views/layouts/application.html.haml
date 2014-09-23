@@ -3,9 +3,7 @@
   %head
     %title
       = yield(:title) + " - " if content_for?(:title)
-      SameCup
-    %meta{:content => "Simple and real scrum board, that will help you easialy work with agile team whereever you are.Start your scrum board for free. Scrum(agile) is most efficient way to develop products.", :name => "description"}/
-    %meta{:content => "scrum,scrum board,cork board,colaboration,daily scrum,agile", :name => "keywords"}
+      OSMT
       = stylesheet_link_tag 'application', 'front', "redmond/jquery-ui-1.8.4.custom.css",'tickbox'
       = stylesheet_link_tag content_for(:stylesheets).split(/,/) if content_for?(:stylesheets)
       = javascript_include_tag 'jquery.min', 'jquery-ui.min', 'jquery_ujs', 'application','tickbox','alertMe'
@@ -19,15 +17,15 @@
           = render :partial=>"shared/usermenu"
         - if @project.nil?
           %li= link_to "Home", root_path, :class => yield(:menu) == 'home' ? 'selected-menu' : ''
-          %li= link_to "Tour", tour_path, :class => yield(:menu) == 'tour' ? 'selected-menu' : ''
-          %li
-            %a{:href => "http://blog.samecup.com"} Blog
+         # %li= link_to "Tour", tour_path, :class => yield(:menu) == 'tour' ? 'selected-menu' : ''
+         # %li
+         #   %a{:href => "http://blog.samecup.com"} Blog
     #head
       .logo.float-left
         %a{:href => "/"}
           %img{:src => "/images/samecup_logo.png", :height => "40px", :border => "0"}/
         - if @project.nil? || @project.id.nil?
-          %a{:href => "/"} SameCup
+          %a{:href => "/"} OSMT
         - else
           = link_to @project.name, project_path(@project)
       .users-menu.float-left
@@ -40,8 +38,8 @@
           or #{link_to "sign in", new_user_session_path}
       %div{:style => "clear:both"}
     #feedback_button{:style => "position:absolute;top: 300px;left:0px;"}
-      %a{:href => "#", :onclick => "showFeedback();return false;"}
-        %img{:src => "/images/btn-feedback.png"}/
+    #  %a{:href => "#", :onclick => "showFeedback();return false;"}
+    #    %img{:src => "/images/btn-feedback.png"}/
     #content
       = yield
       %div{:style => "clear:both"}
