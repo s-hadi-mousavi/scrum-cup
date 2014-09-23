@@ -18,8 +18,8 @@
         - if @project.nil?
           %li= link_to "Home", root_path, :class => yield(:menu) == 'home' ? 'selected-menu' : ''
          # %li= link_to "Tour", tour_path, :class => yield(:menu) == 'tour' ? 'selected-menu' : ''
-         # %li
-         #   %a{:href => "http://blog.samecup.com"} Blog
+          %li
+            %a{:href => "http://blog.samecup.com"} Blog
     #head
       .logo.float-left
         %a{:href => "/"}
