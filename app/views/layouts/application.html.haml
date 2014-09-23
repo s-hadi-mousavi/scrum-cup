@@ -20,8 +20,6 @@
         - if @project.nil?
           %li= link_to "Home", root_path, :class => yield(:menu) == 'home' ? 'selected-menu' : ''
           %li= link_to "FNST", "http://fnst.ut.ac.ir", :class => yield(:menu) == 'tour' ? 'selected-menu' : ''
-          %li
-            %a{:href => "http://ut.ac.ir"} University of Tehran
     #head
       .logo.float-left
         %a{:href => "/"}
