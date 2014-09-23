@@ -13,16 +13,6 @@
       = csrf_meta_tag
       %link{:href => "/samecup_32x32.png", :rel => "icon", :type => "image/png"}/
   %body
-    #menue
-
-      %ul
-        - if user_signed_in?
-          = render :partial=>"shared/usermenu"
-        - if @project.nil?
-          %li= link_to "Home", root_path, :class => yield(:menu) == 'home' ? 'selected-menu' : ''
-          %li= link_to "FNST", "http://fnst.ut.ac.ir", :class => yield(:menu) == 'tour' ? 'selected-menu' : ''
-          %li
-            %a{:href => "http://www.ut.ac.ir"} University of Tehran
     #head
       .logo.float-left
         %a{:href => "/"}
@@ -40,6 +30,15 @@
           = link_to "Register", new_user_registration_path
           or #{link_to "sign in", new_user_session_path}
       %div{:style => "clear:both"}
+    #menue
+      %ul
+        - if user_signed_in?
+          = render :partial=>"shared/usermenu"
+        - if @project.nil?
+          %li= link_to "Home", root_path, :class => yield(:menu) == 'home' ? 's$
+          %li= link_to "FNST", "http://fnst.ut.ac.ir", :class => yield(:menu) =$
+          %li
+            %a{:href => "http://www.ut.ac.ir"} University of Tehran
     #content
       = yield
       %div{:style => "clear:both"}
