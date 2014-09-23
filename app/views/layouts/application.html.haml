@@ -11,7 +11,7 @@
       = csrf_meta_tag
       %link{:href => "/samecup_32x32.png", :rel => "icon", :type => "image/png"}/
   %body
-    #menu
+    #menue
       %ul
         - if user_signed_in?
           = render :partial=>"shared/usermenu"
