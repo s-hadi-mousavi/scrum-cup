@@ -48,18 +48,3 @@
         .form{:style => "width: 220px;text-align: center;font-size: 20px;"}
           %span.plus +
           = link_to 'Start New Project', new_project_path
-    .h3 Follow us on
-    %a{:href => "http://blog.samecup.com"}
-      %img{:alt => "SameCup blog", :border => "0", :src => "/images/blogicon.png"}/
-    %a{:href => "http://twitter.com/samecup"}
-      %img{:alt => "Twitter of SameCup", :border => "0", :src => "/images/twitter.png"}/
-    .g-clear-20
-    .h3 Last news
-    - cache 'rss-news', :expire => 60.minutes do
-      - feed = get_rss
-      - unless feed.nil?
-        - feed.items[0..5].each do |entry|
-          .newsitem
-            = link_to h(entry.title), entry.link
-            %br/
-            %span= raw truncate(entry.description.gsub(/<\/?[^>]*>/, ""), :length => 100)
