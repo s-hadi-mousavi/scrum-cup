@@ -14,6 +14,7 @@
       %link{:href => "/samecup_32x32.png", :rel => "icon", :type => "image/png"}/
   %body
     #menue
+
       %ul
         - if user_signed_in?
           = render :partial=>"shared/usermenu"
