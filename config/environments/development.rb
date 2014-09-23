@@ -15,4 +15,18 @@ Samecup::Application.configure do
   config.action_mailer.default :charset => "utf-8"
   config.action_mailer.default_url_options = { :host => 'localhost:3002' }
   config.action_mailer.delivery_method = :smtp
+ config.action_mailer.smtp_settings = {   
+    :openssl_verify_mode => OpenSSL::SSL::VERIFY_NONE,      
+    :ssl => true,
+    :enable_starttls_auto => true,  #this is the important stuff!
+    :address        => 'smtp.gmail.com',
+    :port           => 465,
+#    :domain         => 'xxxxxx',
+    :authentication => :plain,
+    :user_name      => 'nanofoamco@gmail.com',
+    :password       => 'nanofoam123'
+  }
+
+
+
 end
